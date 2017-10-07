@@ -30,7 +30,12 @@
 #include <bluetooth/hci_lib.h>
 #else
 // Not on ARM, probably compiling on a PC. Include stub headers
-#include "bluetooth-stub.h"
+// this works on a linux laptop uname -a => Linux yourname 4.9.16-gentoo #10 SMP PREEMPT Sun Sep 10 19:29:09 EDT 2017 x86_64 Intel(R) Core(TM) i7-3667U CPU @ 2.00GHz GenuineIntel GNU/Linux
+#include <bluetooth/bluetooth.h>
+#include <bluetooth/hci.h>
+#include <bluetooth/rfcomm.h>
+#include <bluetooth/l2cap.h>
+// #include "bluetooth-stub.h"
 #endif
 
 #include "erl_nif.h"
